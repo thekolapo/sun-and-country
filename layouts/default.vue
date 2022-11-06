@@ -11,9 +11,10 @@
 
 .app {
   position: relative;
+  width: 92%;
   max-width: 124rem;
-  margin: 0 auto;
-  padding: 4.6rem 0 10rem;
   min-height: 90vh;
+  margin: 0 auto;
+  padding: 0 0rem 8rem;
 }
 </style>
