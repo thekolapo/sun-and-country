@@ -1,5 +1,5 @@
 html {
-  font-family: 	'Graphik', -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family: 	'ProximaNova', -apple-system, "system-ui", "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 	font-weight: 400;
   font-size: 62.5%;
   -ms-text-size-adjust: 100%;
@@ -17,13 +17,12 @@ html {
 }
 
 body {
-  font-size: 2.4rem;
-  line-height: 3.4rem;
+  font-size: 2rem;
+  line-height: 3rem;
   overflow-x: hidden;
-  background-color: #EEEEEE;
+  color: #282825;
 
   @include screen ('small') {
-    font-size: 2rem;
-    line-height: 3rem;
+
   }
 }
