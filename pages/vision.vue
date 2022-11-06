@@ -54,7 +54,6 @@
     font-family: 'Lehigh-Personal';
     font-size: 4.8rem;
     line-height: 4.8rem;
-    text-align: center;
   }
 
   &__body {
