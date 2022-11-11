@@ -10,9 +10,10 @@
 
 <style lang="scss" scoped>
 .footer {
-  position: sticky;
-  bottom: 12rem;
-  width: 100%;
+  position: fixed;
+  bottom: 10rem;
+  width: inherit;
+  max-width: inherit;
   display: flex;
   justify-content: space-between;
 
