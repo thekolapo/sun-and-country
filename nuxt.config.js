@@ -15,11 +15,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { name: 'keywords', content: '' },
+      { name: 'keywords', content: 'sun and country, biafra, nigerian civil war, nigerian war, civil war, half of a yellow sun' },
       {
         hid: 'description',
         name: 'description',
-        content: "",
+        content: "A Nigerian Civil War Story.",
       },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: '' },
@@ -27,12 +27,12 @@ export default {
       {
         hid: 'og:image',
         property: 'og:image',
-        content: '',
+        content: 'https://sunandcountry.netlify.app/meta-image.png',
       },
       {
         hid: 'og:description',
         property: 'og:description',
-        content: "",
+        content: "A Nigerian Civil War Story.",
       },
       { property: 'twitter:card', content: 'summary_large_image' },
       { property: 'twitter:url', content: '' },
@@ -44,12 +44,12 @@ export default {
       {
         hid: 'twitter:description',
         property: 'twitter:description',
-        content: "",
+        content: "A Nigerian Civil War Story.",
       },
       {
         hid: 'twitter:image',
         property: 'twitter:image',
-        content: '',
+        content: 'https://sunandcountry.netlify.app/meta-image.png',
       },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
