@@ -20,5 +20,11 @@ body {
   font-size: 2rem;
   line-height: 3rem;
   overflow-x: hidden;
-  color: #282825;
+  // color: rgb(245, 235, 255);
+  color: white;
+  // color: wheat;
+  // color: rgb(255, 182, 188);
+  background-color: $color-dark;
+  transition: 2s $ease-out-expo;
+
 }
