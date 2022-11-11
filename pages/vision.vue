@@ -51,9 +51,10 @@
   max-width: 50rem;
 
   h1 {
-    font-family: 'Lehigh-Personal';
     font-size: 4.8rem;
     line-height: 4.8rem;
+    // color: rgb(255, 182, 188);
+    color: wheat;
   }
 
   &__body {
