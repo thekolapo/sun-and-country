@@ -15,10 +15,22 @@
         <span>S</span><span>t</span><span>o</span><span>r</span><span>y.</span>
       </div>
     </h1>
-    <p ref="subtext" class="home__subtext">
-      We’re obsessed with helping a new generation of people understand the war
-      that changed Nigeria, and how the world saw Africa, forever.
-    </p>
+    <div ref="body" class="home__body">
+      <p ref="subtext" class="home__subtext">
+        We’re obsessed with helping a new generation of people understand the
+        war that changed Nigeria, and how the world saw Africa, forever.
+        Subscribe below to get updates on how we're trying to achieve this
+        vision.
+      </p>
+      <form action="">
+        <input
+          type="email"
+          required
+          placeholder="We saved a spot for your email"
+        />
+        <button>Send</button>
+      </form>
+    </div>
     <div ref="sun" class="home__sun" @click="triggerPageAnimation()" />
   </div>
 </template>
@@ -27,9 +39,12 @@
 export default {
   mounted() {
     document.body.style.overflow = 'hidden'
-    if (sessionStorage.getItem('triggeredHomepageAnimation') !== 'true')
+    if (sessionStorage.getItem('triggeredHomepageAnimation') !== 'true') {
       this.handleMouseWheel()
-    else this.triggerPageAnimation()
+      setTimeout(() => {
+        this.$refs.sun.style.setProperty('--translate-y', '25%')
+      }, 500)
+    } else this.triggerPageAnimation()
   },
   destroyed() {
     document.body.style.background = '#282825'
@@ -43,7 +58,7 @@ export default {
       this.$refs.sun.style.setProperty('--translate-y', '-50%')
       this.$refs.sun.style.setProperty('--hover-translate-y', '-50%')
       this.$refs.sun.style.transformOrigin = '0 0'
-      this.$refs.subtext.style.opacity = 1
+      this.$refs.body.style.opacity = 1
       document.body.style.background = 'white'
       document.body.style.color = '#282825'
       document.documentElement.style.setProperty(
@@ -54,32 +69,34 @@ export default {
       sessionStorage.setItem('triggeredHomepageAnimation', true)
     },
     handleMouseWheel() {
-      let listenToWheelEvent = true
+      // let listenToWheelEvent = true
 
       this.$refs.home.addEventListener('wheel', (e) => {
-        if (!listenToWheelEvent) return
-        listenToWheelEvent = false
-        if (e.wheelDeltaY <= -75) {
+        // if (!listenToWheelEvent) return
+        // listenToWheelEvent = false
+        // default is -75
+        if (e.wheelDeltaY <= -30) {
           this.triggerPageAnimation()
-        } else {
-          let translateValue = (e.wheelDeltaY * -50) / -60
-
-          if (translateValue < 35) {
-            translateValue = 20
-          }
-
-          this.$refs.sun.style.setProperty(
-            '--translate-y',
-            `${translateValue}%`
-          )
-          this.$refs.sun.style.setProperty('--scale', 1.2)
-
-          setTimeout(() => {
-            this.$refs.sun.style.setProperty('--translate-y', '25%')
-            this.$refs.sun.style.setProperty('--scale', 1)
-            listenToWheelEvent = true
-          }, 150)
         }
+        // else {
+        //   let translateValue = (e.wheelDeltaY * -50) / -75
+
+        //   if (translateValue < 35) {
+        //     translateValue = 20
+        //   }
+
+        //   this.$refs.sun.style.setProperty(
+        //     '--translate-y',
+        //     `${translateValue}%`
+        //   )
+        //   this.$refs.sun.style.setProperty('--scale', 1.2)
+
+        //   setTimeout(() => {
+        //     this.$refs.sun.style.setProperty('--translate-y', '25%')
+        //     this.$refs.sun.style.setProperty('--scale', 1)
+        //     listenToWheelEvent = true
+        //   }, 150)
+        // }
       })
     },
   },
@@ -123,7 +140,8 @@ export default {
   }
 
   &__sun {
-    --translate-y: 25%;
+    --transition-time: 1.6s;
+    --translate-y: 80%;
     --hover-translate-y: 20%;
     --scale: 1;
     position: absolute;
@@ -144,7 +162,7 @@ export default {
     top: 50%;
     left: 50%;
     transform: scale(var(--scale)) translate(-50%, var(--translate-y));
-    transition: 1.6s $ease-out-expo;
+    transition: var(--transition-time) $ease-out-expo;
     transform-origin: left;
     cursor: pointer;
 
@@ -208,16 +226,50 @@ export default {
     }
   }
 
-  &__subtext {
+  &__body {
+    display: flex;
+    flex-direction: column;
     z-index: 3;
+    opacity: 0;
+    transition: 1.8s linear 1s;
+  }
+
+  &__subtext {
     max-width: 52rem;
     margin-top: 2.6rem;
     line-height: 2.7rem;
     color: $color-dark;
     text-align: center;
-    opacity: 0;
     pointer-events: none;
-    transition: 1.8s linear 1s;
+  }
+
+  form {
+    margin: 7rem auto 0;
+    border-bottom: 1px dotted $color-dark;
+
+    input,
+    button {
+      background: transparent;
+      border: none;
+      outline: none;
+    }
+
+    input {
+      min-width: 26rem;
+      font-size: 1.9rem;
+
+      &::placeholder {
+        color: rgba($color-dark, 1);
+      }
+    }
+
+    button {
+      font-weight: bold;
+      opacity: 0.7;
+      margin-left: 2rem;
+      font-size: 1.6rem;
+      text-transform: uppercase;
+    }
   }
 }
 </style>
