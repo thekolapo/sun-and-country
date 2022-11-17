@@ -55,6 +55,11 @@
     line-height: 4.8rem;
     // color: rgb(255, 182, 188);
     color: wheat;
+
+    @include screen(small) {
+      font-size: 3.6rem;
+      line-height: 3.6rem;
+    }
   }
 
   &__body {

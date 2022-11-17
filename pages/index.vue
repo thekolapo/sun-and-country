@@ -144,6 +144,7 @@ export default {
     --translate-y: 80%;
     --hover-translate-y: 20%;
     --scale: 1;
+    --hover-scale: 1.2;
     position: absolute;
     $size: 70.2rem;
     display: flex;
@@ -166,8 +167,14 @@ export default {
     transform-origin: left;
     cursor: pointer;
 
+    @include screen(small) {
+      --scale: 0.7;
+      --hover-scale: 0.8;
+    }
+
     &:hover {
-      transform: scale(1.2) translate(-50%, var(--hover-translate-y));
+      transform: scale(var(--hover-scale))
+        translate(-50%, var(--hover-translate-y));
     }
 
     &::before,
@@ -204,6 +211,10 @@ export default {
     position: relative;
     font-size: 3.6rem;
     z-index: 3;
+
+    @include screen(small) {
+      font-size: 3rem;
+    }
 
     div {
       display: inline-block;
@@ -257,6 +268,10 @@ export default {
     input {
       min-width: 26rem;
       font-size: 1.9rem;
+
+      @include screen(small) {
+        font-size: 1.8rem;
+      }
 
       &::placeholder {
         color: rgba($color-dark, 1);

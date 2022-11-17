@@ -283,16 +283,27 @@
     a {
       font-size: 2.4rem;
 
+      @include screen(small) {
+        font-size: 2.1rem;
+      }
+
       &:first-child {
         margin-right: 3.4rem;
       }
     }
   }
 
-  &__logo-wordmark {
-    > * {
-      transition: 2s $ease-out-expo;
-      fill: var(--logo-wordmark-color);
+  &__logo {
+    @include screen(small) {
+      transform: scale(0.85);
+      transform-origin: left;
+    }
+
+    &-wordmark {
+      > * {
+        transition: 2s $ease-out-expo;
+        fill: var(--logo-wordmark-color);
+      }
     }
   }
 }

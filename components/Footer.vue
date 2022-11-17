@@ -17,6 +17,12 @@
   display: flex;
   justify-content: space-between;
 
+  @include screen(med) {
+    // background: $color-dark;
+    bottom: 0rem;
+    padding: 1.5rem 0 2rem;
+  }
+
   &__links a:first-child {
     margin-right: 3rem;
   }
