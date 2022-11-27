@@ -173,9 +173,14 @@ export default {
     cursor: pointer;
 
     @include screen(small) {
+      --scale: 0.8;
+      --hover-scale: 0.9;
+    }
+
+    @media screen and (max-width: 480px) {
       --scale: 0.7;
-      --size: 64rem;
       --hover-scale: 0.7;
+      --size: 64rem;
     }
 
     &:hover {
@@ -220,8 +225,11 @@ export default {
     z-index: 3;
 
     @include screen(small) {
+      font-size: 3rem;
+    }
+
+    @media screen and (max-width: 480px) {
       font-size: 7vw;
-      // font-size: 3rem;
     }
 
     div {
@@ -294,7 +302,7 @@ export default {
       font-size: 1.9rem;
 
       @include screen(small) {
-        font-size: 1.6rem;
+        font-size: 1.54rem;
         min-width: 22rem;
       }
 
@@ -309,9 +317,11 @@ export default {
       margin-left: 2rem;
       font-size: 1.6rem;
       text-transform: uppercase;
+      color: rgba(0, 0, 0, 0.9);
 
       @include screen(small) {
-        font-size: 1.5rem;
+        font-size: 1.45rem;
+        margin-left: 1rem;
       }
     }
   }
