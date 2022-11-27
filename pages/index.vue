@@ -111,9 +111,14 @@ export default {
   align-items: center;
   min-height: inherit;
   height: 100vh;
-  position: absolute;
-  top: 0;
-  width: 100%;
+  // position: absolute;
+  // top: 0;
+  // width: 100%;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  left: calc(-50vw + 50%);
+  margin-top: -6.2rem;
 
   @keyframes slide {
     to {
@@ -145,12 +150,12 @@ export default {
     --hover-translate-y: 20%;
     --scale: 1;
     --hover-scale: 1.2;
+    --size: 70.2rem;
     position: absolute;
-    $size: 70.2rem;
     display: flex;
     flex-direction: column;
-    width: $size;
-    height: $size;
+    width: var(--size);
+    height: var(--size);
     background-color: var(--color-orange);
     border-radius: 100%;
     text-align: center;
@@ -169,6 +174,7 @@ export default {
 
     @include screen(small) {
       --scale: 0.7;
+      --size: 64rem;
       --hover-scale: 0.8;
     }
 
@@ -213,7 +219,8 @@ export default {
     z-index: 3;
 
     @include screen(small) {
-      font-size: 3rem;
+      font-size: 7vw;
+      // font-size: 3rem;
     }
 
     div {
@@ -243,6 +250,10 @@ export default {
     z-index: 3;
     opacity: 0;
     transition: 1.8s linear 1s;
+
+    @include screen(small) {
+      width: 90%;
+    }
   }
 
   &__subtext {
@@ -252,11 +263,23 @@ export default {
     color: $color-dark;
     text-align: center;
     pointer-events: none;
+
+    @include screen(small) {
+      font-size: 1.6rem;
+      line-height: 2.5rem;
+    }
   }
 
   form {
+    display: flex;
+    justify-content: space-between;
     margin: 7rem auto 0;
     border-bottom: 1px dotted $color-dark;
+
+    @include screen(small) {
+      margin-top: 4rem;
+      width: 75vw;
+    }
 
     input,
     button {
@@ -270,7 +293,8 @@ export default {
       font-size: 1.9rem;
 
       @include screen(small) {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
+        min-width: 22rem;
       }
 
       &::placeholder {
@@ -284,6 +308,10 @@ export default {
       margin-left: 2rem;
       font-size: 1.6rem;
       text-transform: uppercase;
+
+      @include screen(small) {
+        font-size: 1.5rem;
+      }
     }
   }
 }

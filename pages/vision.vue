@@ -65,6 +65,10 @@
   &__body {
     margin-top: 5rem;
 
+    @include screen(small) {
+      margin-top: 3rem;
+    }
+
     p:not(:last-child) {
       margin-bottom: 3rem;
     }
