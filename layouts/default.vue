@@ -26,7 +26,7 @@ export default {
   width: 92%;
   max-width: 124rem;
   // min-height: 82vh;
-  min-height: 90vh;
+  // min-height: 90vh;
   margin: 0 auto;
   padding: 0 0rem 8rem;
 }
