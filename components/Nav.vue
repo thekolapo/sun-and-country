@@ -297,7 +297,7 @@
         margin-right: 3.4rem;
 
         @include screen(small) {
-          margin-right: 2rem;
+          margin-right: 1.6rem;
         }
       }
     }

@@ -23,11 +23,15 @@
     padding: 1.5rem 0 2rem;
   }
 
+  @include screen(small) {
+    font-size: 1.7rem;
+  }
+
   &__links a:first-child {
     margin-right: 3rem;
 
     @include screen(small) {
-      margin-right: 2rem;
+      margin-right: 1.6rem;
     }
   }
 }
