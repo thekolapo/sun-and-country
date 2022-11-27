@@ -25,6 +25,10 @@
 
   &__links a:first-child {
     margin-right: 3rem;
+
+    @include screen(small) {
+      margin-right: 2rem;
+    }
   }
 }
 </style>

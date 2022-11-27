@@ -279,23 +279,33 @@
   top: 4.6rem;
   z-index: 2;
 
+  @include screen(small) {
+    top: 3.6rem;
+  }
+
   &__menu {
+    margin-top: 1.1rem;
+
     a {
       font-size: 2.4rem;
 
       @include screen(small) {
-        font-size: 2.1rem;
+        font-size: 2rem;
       }
 
       &:first-child {
         margin-right: 3.4rem;
+
+        @include screen(small) {
+          margin-right: 2rem;
+        }
       }
     }
   }
 
   &__logo {
     @include screen(small) {
-      transform: scale(0.85);
+      transform: scale(0.78);
       transform-origin: left;
     }
 
