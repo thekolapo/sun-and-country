@@ -70,34 +70,51 @@ export default {
     },
     handleMouseWheel() {
       // let listenToWheelEvent = true
+      if (
+        /Android|webOS|iPhone|iPod|iPad|BlackBerry|IEMobile|Opera Mini/i.test(
+          navigator.userAgent
+        )
+      ) {
+        let touchStart
 
-      this.$refs.home.addEventListener('wheel', (e) => {
-        // if (!listenToWheelEvent) return
-        // listenToWheelEvent = false
-        // default is -75
-        if (e.wheelDeltaY <= -30) {
-          this.triggerPageAnimation()
-        }
-        // else {
-        //   let translateValue = (e.wheelDeltaY * -50) / -75
+        this.$refs.home.addEventListener('touchstart', (e) => {
+          touchStart = e.touches[0].clientY
+        })
 
-        //   if (translateValue < 35) {
-        //     translateValue = 20
-        //   }
+        this.$refs.home.addEventListener('touchmove', (e) => {
+          const touchEnd = e.touches[0].clientY
 
-        //   this.$refs.sun.style.setProperty(
-        //     '--translate-y',
-        //     `${translateValue}%`
-        //   )
-        //   this.$refs.sun.style.setProperty('--scale', 1.2)
+          if (touchEnd - touchStart < -30) this.triggerPageAnimation()
+        })
+      } else {
+        this.$refs.home.addEventListener('wheel', (e) => {
+          // if (!listenToWheelEvent) return
+          // listenToWheelEvent = false
+          // default is -75
+          if (e.wheelDeltaY <= -30) {
+            this.triggerPageAnimation()
+          }
+          // else {
+          //   let translateValue = (e.wheelDeltaY * -50) / -75
 
-        //   setTimeout(() => {
-        //     this.$refs.sun.style.setProperty('--translate-y', '25%')
-        //     this.$refs.sun.style.setProperty('--scale', 1)
-        //     listenToWheelEvent = true
-        //   }, 150)
-        // }
-      })
+          //   if (translateValue < 35) {
+          //     translateValue = 20
+          //   }
+
+          //   this.$refs.sun.style.setProperty(
+          //     '--translate-y',
+          //     `${translateValue}%`
+          //   )
+          //   this.$refs.sun.style.setProperty('--scale', 1.2)
+
+          //   setTimeout(() => {
+          //     this.$refs.sun.style.setProperty('--translate-y', '25%')
+          //     this.$refs.sun.style.setProperty('--scale', 1)
+          //     listenToWheelEvent = true
+          //   }, 150)
+          // }
+        })
+      }
     },
   },
 }
