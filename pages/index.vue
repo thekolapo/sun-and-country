@@ -175,7 +175,7 @@ export default {
     @include screen(small) {
       --scale: 0.7;
       --size: 64rem;
-      --hover-scale: 0.8;
+      --hover-scale: 0.7;
     }
 
     &:hover {
@@ -205,6 +205,7 @@ export default {
       );
       background-size: 400%;
       z-index: -1;
+      transform: translateZ(0);
       animation: animate-gradient 20s linear infinite;
     }
 
