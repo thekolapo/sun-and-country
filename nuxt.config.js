@@ -14,7 +14,11 @@ export default {
     },
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: "viewport",
+        name: "viewport",
+        content: "width=device-width, initial-scale=1, shrink-to-fit=no",
+      },
       { name: 'keywords', content: 'sun and country, biafra, nigerian civil war, nigerian war, civil war, half of a yellow sun' },
       {
         hid: 'description',
