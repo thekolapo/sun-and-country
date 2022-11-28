@@ -19,7 +19,7 @@
 <style lang="scss" scoped>
 .footer {
   position: fixed;
-  bottom: 10rem;
+  bottom: 4rem;
   width: inherit;
   max-width: inherit;
   display: flex;
