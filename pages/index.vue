@@ -38,7 +38,7 @@
 <script>
 export default {
   mounted() {
-    document.body.style.overflow = 'hidden'
+    this.setColorMode('dark')
     if (sessionStorage.getItem('triggeredHomepageAnimation') !== 'true') {
       this.handleMouseWheel()
       setTimeout(() => {
@@ -47,13 +47,26 @@ export default {
     } else this.triggerPageAnimation()
   },
   destroyed() {
-    document.body.style.background = '#282825'
-    document.body.style.color = 'white'
-    document.body.style.overflow = 'unset'
-    document.documentElement.style.setProperty('--logo-wordmark-color', 'white')
-    document.documentElement.style.setProperty('--link-underline', 'white')
+    this.setColorMode('light')
   },
   methods: {
+    setColorMode(mode) {
+      let background, color, overflow
+      background = overflow = 'unset'
+      color = '#282825'
+
+      if (mode === 'dark') {
+        background = '#282825'
+        color = 'white'
+        overflow = 'hidden'
+      }
+
+      document.body.style.background = background
+      document.body.style.color = color
+      document.body.style.overflow = overflow
+      document.documentElement.style.setProperty('--logo-wordmark-color', color)
+      document.documentElement.style.setProperty('--link-underline', color)
+    },
     triggerPageAnimation() {
       this.$refs.sun.style.setProperty('--translate-y', '-50%')
       this.$refs.sun.style.setProperty('--hover-translate-y', '-50%')

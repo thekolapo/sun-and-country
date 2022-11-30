@@ -6,7 +6,7 @@ $color-dark: #282825;
 
 :root {
   --color-orange: #E8AB29;
-  --logo-wordmark-color: white;
-  --link-underline: white;
+  --logo-wordmark-color: #{$color-dark};
+  --link-underline: #{$color-dark};
 }
 

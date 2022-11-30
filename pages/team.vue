@@ -69,7 +69,6 @@
       text-align: right;
       max-width: 27.4rem;
       width: 50%;
-      color: wheat;
     }
 
     &-contributors {
