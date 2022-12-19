@@ -270,6 +270,7 @@ export default {
 
     @include screen(small) {
       font-size: 3rem;
+      max-width: 30rem;
     }
 
     @media screen and (max-width: 480px) {
