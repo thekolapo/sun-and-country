@@ -12,7 +12,12 @@
       </div>
       <div><span>W</span><span>a</span><span>r</span></div>
       <div>
-        <span>S</span><span>t</span><span>o</span><span>r</span><span>y.</span>
+        <span>S</span><span>t</span><span>o</span><span>r</span><span>y</span>
+      </div>
+      <div><span>I</span><span>s</span></div>
+      <div>
+        <span>C</span><span>o</span><span>m</span><span>i</span><span>n</span
+        ><span>g.</span>
       </div>
     </h1>
     <div ref="body" class="home__body">
@@ -22,8 +27,16 @@
         Subscribe below to get updates on how we're trying to achieve this
         vision.
       </p>
-      <form action="">
+      <form
+        id="mc-embedded-subscribe-form"
+        action="https://gmail.us14.list-manage.com/subscribe/post?u=c5e7be0fab293c70ce7928551&amp;id=5fb28450d7&amp;f_id=006188e0f0"
+        method="post"
+        name="mc-embedded-subscribe-form"
+        validate
+      >
         <input
+          id="mce-EMAIL"
+          name="EMAIL"
           type="email"
           required
           placeholder="We saved a spot for your email"
@@ -253,6 +266,7 @@ export default {
     position: relative;
     font-size: 3.6rem;
     z-index: 3;
+    text-align: center;
 
     @include screen(small) {
       font-size: 3rem;
@@ -330,6 +344,8 @@ export default {
     input {
       min-width: 26rem;
       font-size: 1.9rem;
+      background: transparent;
+      outline: none;
 
       @include screen(small) {
         font-size: 1.54rem;
