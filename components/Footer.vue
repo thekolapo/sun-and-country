@@ -2,12 +2,16 @@
   <footer ref="footer" class="footer">
     <div class="footer__copyright">Vistanium © 2022</div>
     <div class="footer__links">
-      <a class="c-link" href="https://twitter.com/Vistanium" target="_blank">
+      <a
+        class="c-link"
+        href="https://twitter.com/sunandcountry"
+        target="_blank"
+      >
         Twitter
       </a>
       <a
         class="c-link"
-        href="https://www.instagram.com/vistanium/?hl=en"
+        href="https://www.instagram.com/sunandcountry"
         target="_blank"
       >
         Instagram
