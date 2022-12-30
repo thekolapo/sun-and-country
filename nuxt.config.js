@@ -23,7 +23,7 @@ export default {
       {
         hid: 'description',
         name: 'description',
-        content: "A Nigerian Civil War Story.",
+        content: "A Nigerian Civil War Story Is Coming.",
       },
       { property: 'og:type', content: 'website' },
       { property: 'og:url', content: '' },
@@ -36,7 +36,7 @@ export default {
       {
         hid: 'og:description',
         property: 'og:description',
-        content: "A Nigerian Civil War Story.",
+        content: "A Nigerian Civil War Story Is Coming.",
       },
       { property: 'twitter:card', content: 'summary_large_image' },
       { property: 'twitter:url', content: '' },
@@ -48,7 +48,7 @@ export default {
       {
         hid: 'twitter:description',
         property: 'twitter:description',
-        content: "A Nigerian Civil War Story.",
+        content: "A Nigerian Civil War Story Is Coming.",
       },
       {
         hid: 'twitter:image',
